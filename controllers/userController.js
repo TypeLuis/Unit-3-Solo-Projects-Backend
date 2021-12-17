@@ -7,17 +7,16 @@ userController.signup = async (req, res) => {
     try {
 
         const user = await models.user.create({
-            where: {
                 name: req.body.name,
                 email: req.body.email,
                 password: req.body.password
-            }
         })
 
         res.json({ success: 'User Created', user })
     }
 
     catch (error) {
+        console.log(error)
         res.status(404).json({ error: error.message })
     }
 }
@@ -26,14 +25,16 @@ userController.signup = async (req, res) => {
 userController.login = async (req, res) => {
     try {
 
-        const user = await models.user.findOne({ where: { name: req.body.name } })
+        const user = await models.user.findOne({ where: { email: req.body.email } })
 
         if (user && user.password === req.body.password) {
             res.json({ success: 'User Logged in', user })
         }
+        else{
+            res.status(401).json({ message: 'login failed'})
+        }
 
 
-        res.json({ success: 'User Created', user })
     }
 
     catch (error) {
@@ -44,8 +45,8 @@ userController.login = async (req, res) => {
 
 userController.verifyUser = async (req, res) => {
     try {
-
-        const user = await models.user.findOne({ where: { id: req.headers.authourization } })
+        // console.log(req)
+        const user = await models.user.findOne({ where: { id: req.headers.authorization } })
 
         if (user) { res.json({ user: user }) }
         else { res.status(401).json({ message: 'user not found' }) }

@@ -1,0 +1,6 @@
+[object SequelizeInstance:favAnime] 
+
+[object SequelizeInstance:favAnime] 
+
+[object SequelizeInstance:favAnime] 
+

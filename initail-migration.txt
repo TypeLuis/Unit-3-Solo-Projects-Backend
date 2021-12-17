@@ -1,0 +1,7 @@
+sequelize model:generate --name=user --attributes=name:string,email:string,password:string
+
+sequelize model:generate --name=favAnime --attributes=userId:integer,animeId:integer
+
+sequelize model:generate --name=watched --attributes=userId:integer,animeId:integer
+
+sequelize model:generate --name=comments --attributes=userId:integer,animeId:integer,comment:string

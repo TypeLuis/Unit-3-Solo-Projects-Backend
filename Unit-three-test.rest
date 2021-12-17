@@ -1,0 +1,116 @@
+
+
+///// USER ROUTES /////
+
+// Creates User
+POST http://localhost:3020/user
+Content-Type: application/json
+
+{
+    "email" : "klk2@test.com",
+    "name" : "Luis222",
+    "password" : "123"
+}
+
+###
+
+// login user
+POST http://localhost:3020/user/login
+Content-Type: application/json
+
+{
+    "email" : "klk2@test.com",
+    "name" : "Luis222",
+    "password" : "123"
+}
+
+
+###
+
+// verify user
+GET http://localhost:3020/user/verify
+Content-Type: application/json
+Authorization: 1
+
+
+
+
+
+
+
+
+
+///// fAVE ROUTES /////
+
+
+###
+
+/// creates Fave
+POST http://localhost:3020/fave/16497
+Content-Type: application/json
+Authorization: 4
+
+
+###
+
+/// gets Fave
+GET http://localhost:3020/fave
+Content-Type: application/json
+Authorization: 1
+
+
+###
+
+// deletes fave
+DELETE http://localhost:3020/fave/16497
+Content-Type: application/json
+Authorization: 1
+
+
+###
+
+// creates a file for that specific user
+GET http://localhost:3020/fave/write
+Content-Type: application/json
+Authorization: 4
+
+
+
+
+
+
+
+
+
+
+///// WATCHED ROUTES /////
+
+###
+
+// creates watched
+POST http://localhost:3020/watched/16498
+Content-Type: application/json
+Authorization: 1
+
+
+###
+
+// gets watched
+GET http://localhost:3020/watched
+Content-Type: application/json
+Authorization: 1
+
+
+###
+
+// deletes watched
+DELETE http://localhost:3020/watched/16497
+Content-Type: application/json
+Authorization: 1
+
+
+###
+
+GET https://api.jikan.moe/v3/anime/1//
+Content-Type: application/json
+Accept-Encoding: gzip, deflate, br
