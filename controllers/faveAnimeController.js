@@ -1,5 +1,11 @@
 models = require('../models')
 
+const Fs = require('fs')
+
+const Path = require('path')
+
+const Axios = require('axios')
+
 const faveAnimeController = {}
 
 faveAnimeController.getFave = async (req, res) => {
@@ -25,7 +31,10 @@ faveAnimeController.createFave = async (req, res) => {
 
         const user = await models.user.findOne({ where : { id: req.headers.authorization } })
         const newFaveAnime = await user.createFavAnime({
-            animeId : req.params.id
+            animeId : req.params.id,
+            imageUrl : req.body.imageUrl,
+            title : req.body.title,
+
         })
         res.json( { newFaveAnime } )
 
@@ -101,6 +110,21 @@ faveAnimeController.createFaveFile = async (req, res) => {
         res.status(404).json({ error : error.message })
     }
 }
+
+
+// faveAnimeController.downloadImage = async (req, res) => {
+//     try {
+        
+
+
+
+
+//     } 
+//     catch (error) {
+//         console.log(error)
+//         res.status(404).json({ error : error.message })
+//     }
+// }
 
 
 module.exports = faveAnimeController

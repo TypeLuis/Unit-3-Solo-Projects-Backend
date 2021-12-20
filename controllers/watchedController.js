@@ -23,7 +23,9 @@ watchedController.createWatched = async (req, res) => {
 
         const user = await models.user.findOne({ where : { id: req.headers.authorization } })
         const newWatched = await user.createWatched({
-            animeId : req.params.id
+            animeId : req.params.id,
+            imageUrl : req.body.imageUrl,
+            title : req.body.title,
         })
         res.json( { newWatched } )
         

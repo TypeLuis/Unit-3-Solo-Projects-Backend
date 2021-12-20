@@ -2,4 +2,15 @@ So far all was done was the initial setup.
 
 things still need to be done:
     creating database
-    creating the migration files then migrate it
+    creating the migration files then migrate it.
+
+
+.img-wrapper:hover #proj-img1 {
+    transition: 1s ease;
+    transform: scale(1.05); 
+}
+
+.img-wrapper:hover #proj-img {
+    transition: 1s ease;
+    transform: scale(1.05);
+}

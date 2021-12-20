@@ -16,7 +16,9 @@ module.exports = (sequelize, DataTypes) => {
   };
   favAnime.init({
     userId: DataTypes.INTEGER,
-    animeId: DataTypes.INTEGER
+    animeId: DataTypes.INTEGER,
+    imageUrl: DataTypes.STRING,
+    title: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'favAnime',
