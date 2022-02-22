@@ -17,6 +17,9 @@ app.use(express.json())
 
 // allows us to fetch our api in the frontEnd
 app.use(require('cors')())
+app.get('/', (req, res) => {
+    res.json({ok : 'ok'})
+})
 
 const userRoute = require('./routes/userRoute')
 const faveAnimeRoute = require('./routes/faveAnimeRoute')
