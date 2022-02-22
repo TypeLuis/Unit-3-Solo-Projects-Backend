@@ -5,7 +5,6 @@ const Fs = require('fs')
 const Path = require('path')
 
 const Axios = require('axios')
-
 const faveAnimeController = {}
 
 faveAnimeController.getFave = async (req, res) => {
@@ -65,6 +64,20 @@ faveAnimeController.deleteFave = async (req, res) => {
     catch (error) {
         console.log(error)
         res.status(404).json({ error : error.message })
+    }
+}
+
+faveAnimeController.getAllFaves = async (req, res) => {
+    try{
+        const Favorites = await models.favAnime.findAll()
+
+        console.log(Favorites)
+        
+        res.json({success: 'users Found', Favorites})
+    }
+    catch(err){
+        console.log(err)
+        res.status(404).json({ error: error.message })
     }
 }
 

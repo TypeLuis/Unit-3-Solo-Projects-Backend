@@ -5,6 +5,8 @@ const faveAnimeController = require('../controllers/faveAnimeController')
 
 faveAnimeRoute.get('/', faveAnimeController.getFave)
 
+faveAnimeRoute.get('/all', faveAnimeController.getAllFaves)
+
 faveAnimeRoute.post('/:id', faveAnimeController.createFave)
 
 faveAnimeRoute.delete('/:id', faveAnimeController.deleteFave)

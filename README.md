@@ -1,5 +1,7 @@
 # Unit-3-Solo-Projects-Backend
 
+api used: https://rapidapi.com/theapiguy/api/jikan1/ https://jikan.docs.apiary.io#
+
 What is fs?
 
     File System (fs) is a built in module in node js

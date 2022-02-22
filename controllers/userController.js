@@ -65,6 +65,7 @@ userController.verifyUser = async (req, res) => {
 }
 
 
+
 userController.downloads = async (req, res) => {
     try {
         const user = await models.user.findOne({ where: { id: req.headers.authorization } })
